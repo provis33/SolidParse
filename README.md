@@ -1,11 +1,13 @@
-# adaparse
+# SolidParse
 
 Парсер, который сам пытается ожить, когда сайт поменял вёрстку.
 
 Обычный скрипт цепляется за CSS-классы. Классы переименовали — и всё, тишина.  
-`adaparse` смотрит на смысл: цены, названия, карточки, JSON-LD и т.п. Правила кэширует, а если качество упало — чинит себя в рамках лимитов и только потом сохраняет новую версию.
+SolidParse смотрит на смысл: цены, названия, карточки, JSON-LD и т.п. Правила кэширует, а если качество упало — чинит себя в рамках лимитов и только потом сохраняет новую версию.
 
 Ставится у тебя. Интерфейса нет. Нейросеть **не нужна** (есть опциональный плагин, по умолчанию выключен).
+
+Репозиторий: https://github.com/provis33/SolidParse
 
 ---
 
@@ -18,6 +20,8 @@ npm run adaparse -- run -c fixtures/configs/demo-mock-site.yaml
 ```
 
 Если ок — в терминале JSON с товарами. Демо-страницы лежат в `fixtures/`, живой интернет для первого прогона не нужен.
+
+(`npm run adaparse` — это команда запуска SolidParse из этой папки.)
 
 Другие демо:
 
@@ -63,29 +67,21 @@ output:
 
 ## Команды
 
+Из папки проекта:
+
 ```
-adaparse init
-adaparse run -c config.yaml
-adaparse doctor -c config.yaml
-adaparse heal -c config.yaml
-adaparse snapshot show|diff -c config.yaml
-adaparse watch -c config.yaml --interval 300 [--once]
-adaparse rule export -c config.yaml -o pack.json
-adaparse rule import -c config.yaml -i pack.json
-adaparse eval -d fixtures/eval
-adaparse metrics -c config.yaml
-adaparse version
+npm run adaparse -- init
+npm run adaparse -- run -c config.yaml
+npm run adaparse -- doctor -c config.yaml
+npm run adaparse -- heal -c config.yaml
+npm run adaparse -- snapshot show -c config.yaml
+npm run adaparse -- watch -c config.yaml --interval 300 --once
+npm run adaparse -- rule export -c config.yaml -o pack.json
+npm run adaparse -- rule import -c config.yaml -i pack.json
+npm run adaparse -- eval -d fixtures/eval
+npm run adaparse -- metrics -c config.yaml
+npm run adaparse -- version
 ```
-
----
-
-## Где это лежит у тебя
-
-Папка проекта:
-
-`D:\Работа\Скрипты\sup-pars`
-
-Исходники — `src/`, демо HTML — `fixtures/`, тесты — `tests/`.
 
 ---
 
@@ -104,13 +100,15 @@ MIT
 
 ---
 
-# adaparse (English)
+# SolidParse (English)
 
 A scraper that tries to fix itself when a site redesigns.
 
-Most scrapers die when CSS class names change. adaparse looks for signals instead: money, titles, card grids, JSON-LD, and similar. It caches a rule genome, and if quality drops it heals inside budgets, then canary-checks before saving a new version.
+Most scrapers die when CSS class names change. SolidParse looks for signals instead: money, titles, card grids, JSON-LD, and similar. It caches a rule genome, and if quality drops it heals inside budgets, then canary-checks before saving a new version.
 
 Self-host. No UI. No required LLM (optional plugin exists; off by default).
+
+Repo: https://github.com/provis33/SolidParse
 
 ## Quick start
 
@@ -120,7 +118,7 @@ npm test
 npm run adaparse -- run -c fixtures/configs/demo-mock-site.yaml
 ```
 
-You should get JSON items in the terminal. Demo pages live under `fixtures/` so the first run works offline.
+(`npm run adaparse` is how you launch SolidParse from this repo.)
 
 ```bash
 npm run adaparse -- run -c fixtures/configs/demo-product-list.yaml
@@ -173,7 +171,7 @@ plugins:
     use_for: [heal_hints]
 notify:
   enabled: false
-  webhook_url: https://hooks.example.com/adaparse
+  webhook_url: https://hooks.example.com/solidparse
 budgets:
   max_pages: 30
   concurrency: 3
@@ -198,9 +196,9 @@ Then set `fetch.mode: browser`. Without Playwright installed, HTTP mode still wo
 
 ```bash
 npm run build
-docker build -t adaparse .
+docker build -t solidparse .
 docker run --rm -v "%CD%/fixtures:/app/fixtures" -v "%CD%/out:/app/out" \
-  adaparse run -c /app/fixtures/configs/demo-mock-site.yaml
+  solidparse run -c /app/fixtures/configs/demo-mock-site.yaml
 ```
 
 ## Responsible use
