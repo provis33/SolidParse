@@ -1,0 +1,19 @@
+site: eval-08
+entry: https://fixtures.adaparse.local/team
+target:
+  preset: custom
+  fields:
+    - name: title
+      required: true
+      normalize: string
+    - name: url
+      required: true
+      normalize: url
+    - name: role
+      required: true
+      normalize: enum
+      enumValues: [engineer, manager]
+heal:
+  enabled: false
+pagination:
+  enabled: false

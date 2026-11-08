@@ -1,0 +1,70 @@
+{
+  "name": "adaparse",
+  "version": "0.1.0",
+  "description": "Target-driven, signal-based, self-healing web extraction engine",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "adaparse": "./dist/cli.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsx src/cli.ts",
+    "adaparse": "tsx src/cli.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "eval": "tsx src/cli.ts eval -d fixtures/eval",
+    "lint": "eslint src tests",
+    "format": "prettier -w \"src/**/*.ts\" \"tests/**/*.ts\" \"*.md\"",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "scraper",
+    "extractor",
+    "self-heal",
+    "signals",
+    "parser"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^1.1.2",
+    "citty": "^0.1.6",
+    "yaml": "^2.8.1",
+    "zod": "^4.1.12"
+  },
+  "peerDependencies": {
+    "playwright": "^1.48.0"
+  },
+  "peerDependenciesMeta": {
+    "playwright": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.5",
+    "@types/domhandler": "^2.4.5",
+    "@types/node": "^24.10.0",
+    "eslint": "^9.39.1",
+    "prettier": "^3.6.2",
+    "tsup": "^8.5.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.4",
+    "vitest": "^3.2.4"
+  }
+}

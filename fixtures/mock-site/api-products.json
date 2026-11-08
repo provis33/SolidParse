@@ -1,0 +1,6 @@
+{
+  "products": [
+    {"name": "Delta Sofa", "price": 399, "url": "https://mock.adaparse.local/p/delta", "image": "https://mock.adaparse.local/img/delta.jpg"},
+    {"name": "Epsilon Table", "price": 220.5, "url": "https://mock.adaparse.local/p/epsilon", "image": "https://mock.adaparse.local/img/epsilon.jpg"}
+  ]
+}

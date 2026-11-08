@@ -1,0 +1,10 @@
+site: eval-11
+entry:
+  - https://eval.local/a
+  - https://eval.local/b
+target:
+  preset: product_list
+heal:
+  enabled: false
+pagination:
+  enabled: false

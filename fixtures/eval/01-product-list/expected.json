@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Alpine Backpack",
+    "price": 129,
+    "url": "https://fixtures.adaparse.local/product/alpine-backpack",
+    "currency": "USD"
+  },
+  {
+    "title": "Trail Runner Shoes",
+    "price": 89.5,
+    "url": "https://fixtures.adaparse.local/product/trail-runner",
+    "currency": "USD"
+  },
+  {
+    "title": "Camp Lantern",
+    "price": 34.99,
+    "url": "https://fixtures.adaparse.local/product/camp-lantern",
+    "currency": "USD"
+  }
+]

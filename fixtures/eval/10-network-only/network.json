@@ -1,0 +1,19 @@
+[
+  {
+    "products": [
+      {
+        "name": "Net Widget",
+        "price": 12.5,
+        "currency": "USD",
+        "url": "https://spa.example/p/net-widget",
+        "image": "https://spa.example/img/w.png"
+      },
+      {
+        "title": "Net Gadget",
+        "price": 44,
+        "currencyCode": "USD",
+        "link": "https://spa.example/p/net-gadget"
+      }
+    ]
+  }
+]

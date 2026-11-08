@@ -1,0 +1,43 @@
+site: mock-shop
+entry: https://mock.adaparse.local/catalog?page=1
+target:
+  preset: product_list
+  fields:
+    - name: title
+      required: true
+    - name: price
+      required: true
+      normalize: money
+    - name: url
+      required: true
+heal:
+  enabled: true
+  discovery: false
+  canary: balanced
+  holdout_pages: 0
+fetch:
+  mode: http
+  respect_robots: true
+  cache: true
+pagination:
+  enabled: true
+  max_pages: 5
+budgets:
+  max_pages: 10
+  max_depth: 2
+  concurrency: 2
+  request_timeout_ms: 5000
+  time_budget_ms: 15000
+output:
+  format: json
+  path: ./out/demo-mock-site.json
+notify:
+  enabled: false
+fixtures:
+  https://mock.adaparse.local/catalog?page=1: fixtures/mock-site/catalog-page1.html
+  https://mock.adaparse.local/catalog?page=2: fixtures/mock-site/catalog-page2.html
+  https://mock.adaparse.local/robots.txt: fixtures/mock-site/robots.txt
+  https://mock.adaparse.local/api/products.json: fixtures/mock-site/api-products.json
+  https://mock.adaparse.local/private/: fixtures/mock-site/private.html
+  https://mock.adaparse.local/p/omega: fixtures/mock-site/product-og.html
+state_dir: .adaparse/mock-shop

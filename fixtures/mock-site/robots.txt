@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /private/
+Allow: /catalog
+Allow: /api/
+Crawl-delay: 0
+
+User-agent: adaparse
+Disallow: /private/

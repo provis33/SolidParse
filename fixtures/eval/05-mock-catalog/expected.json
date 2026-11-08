@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Alpha Lamp",
+    "price": 19.99,
+    "url": "https://mock.adaparse.local/p/alpha",
+    "currency": "USD"
+  },
+  {
+    "title": "Beta Chair",
+    "price": 89,
+    "url": "https://mock.adaparse.local/p/beta",
+    "currency": "USD"
+  }
+]

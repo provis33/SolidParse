@@ -1,0 +1,30 @@
+site: demo-shop-discovery
+entry: https://fixtures.adaparse.local/catalog
+target:
+  preset: product_list
+  fields:
+    - name: title
+      required: true
+    - name: price
+      required: true
+      normalize: money
+    - name: url
+      required: true
+heal:
+  enabled: true
+  discovery: true
+  canary: balanced
+budgets:
+  max_pages: 8
+  max_depth: 2
+  concurrency: 2
+  request_timeout_ms: 5000
+  time_budget_ms: 15000
+output:
+  format: json
+  path: ./out/demo-discovery.json
+fixtures:
+  https://fixtures.adaparse.local/catalog: fixtures/html/D_moved_entry.html
+  https://fixtures.adaparse.local/new-catalog: fixtures/html/D_new_catalog.html
+  https://fixtures.adaparse.local/: fixtures/html/D_moved_entry.html
+state_dir: .adaparse/demo-shop-discovery

@@ -1,0 +1,28 @@
+site: demo-shop-heal
+entry: https://fixtures.adaparse.local/catalog
+target:
+  preset: product_list
+  fields:
+    - name: title
+      required: true
+    - name: price
+      required: true
+      normalize: money
+    - name: url
+      required: true
+heal:
+  enabled: true
+  discovery: false
+  canary: balanced
+budgets:
+  max_pages: 5
+  max_depth: 1
+  concurrency: 1
+  request_timeout_ms: 5000
+  time_budget_ms: 10000
+output:
+  format: json
+  path: ./out/demo-heal.json
+fixtures:
+  https://fixtures.adaparse.local/catalog: fixtures/html/B_renamed_classes.html
+state_dir: .adaparse/demo-shop-heal

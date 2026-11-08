@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Ada Lovelace",
+    "url": "https://fixtures.adaparse.local/people/ada",
+    "role": "engineer"
+  },
+  {
+    "title": "Grace Hopper",
+    "url": "https://fixtures.adaparse.local/people/grace",
+    "role": "engineer"
+  },
+  {
+    "title": "Alan Turing",
+    "url": "https://fixtures.adaparse.local/people/alan",
+    "role": "manager"
+  }
+]

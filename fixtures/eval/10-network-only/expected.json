@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Net Widget",
+    "price": 12.5,
+    "url": "https://spa.example/p/net-widget",
+    "currency": "USD"
+  },
+  {
+    "title": "Net Gadget",
+    "price": 44,
+    "url": "https://spa.example/p/net-gadget",
+    "currency": "USD"
+  }
+]

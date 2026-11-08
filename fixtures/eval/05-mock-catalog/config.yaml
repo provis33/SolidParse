@@ -1,0 +1,8 @@
+site: eval-05
+entry: eval://page
+target:
+  preset: product_list
+heal:
+  enabled: false
+pagination:
+  enabled: false

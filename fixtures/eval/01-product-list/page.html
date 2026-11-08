@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Demo Shop Catalog</title>
+  <meta property="og:title" content="Demo Shop Catalog" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "Product",
+          "name": "Alpine Backpack",
+          "url": "https://fixtures.adaparse.local/product/alpine-backpack",
+          "image": "https://fixtures.adaparse.local/img/backpack.jpg",
+          "offers": { "@type": "Offer", "price": "129.00", "priceCurrency": "USD", "availability": "https://schema.org/InStock" }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "Product",
+          "name": "Trail Runner Shoes",
+          "url": "https://fixtures.adaparse.local/product/trail-runner",
+          "image": "https://fixtures.adaparse.local/img/shoes.jpg",
+          "offers": { "@type": "Offer", "price": "89.50", "priceCurrency": "USD", "availability": "https://schema.org/InStock" }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "Product",
+          "name": "Camp Lantern",
+          "url": "https://fixtures.adaparse.local/product/camp-lantern",
+          "image": "https://fixtures.adaparse.local/img/lantern.jpg",
+          "offers": { "@type": "Offer", "price": "34.99", "priceCurrency": "USD", "availability": "https://schema.org/OutOfStock" }
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header><nav><a href="/">Home</a><a href="/cart">Cart</a></nav></header>
+  <main>
+    <h1>Outdoor Gear</h1>
+    <ul class="product-grid">
+      <li class="product-card">
+        <a href="/product/alpine-backpack"><img src="/img/backpack.jpg" alt="Alpine Backpack" width="200" height="200" /></a>
+        <h2 class="product-title"><a href="/product/alpine-backpack">Alpine Backpack</a></h2>
+        <div class="price">$129.00</div>
+        <span class="stock">In stock</span>
+      </li>
+      <li class="product-card">
+        <a href="/product/trail-runner"><img src="/img/shoes.jpg" alt="Trail Runner Shoes" width="200" height="200" /></a>
+        <h2 class="product-title"><a href="/product/trail-runner">Trail Runner Shoes</a></h2>
+        <div class="price">$89.50</div>
+        <span class="stock">In stock</span>
+      </li>
+      <li class="product-card">
+        <a href="/product/camp-lantern"><img src="/img/lantern.jpg" alt="Camp Lantern" width="200" height="200" /></a>
+        <h2 class="product-title"><a href="/product/camp-lantern">Camp Lantern</a></h2>
+        <div class="price">$34.99</div>
+        <span class="stock">Sold out</span>
+      </li>
+    </ul>
+  </main>
+  <footer>Privacy Terms Contact</footer>
+</body>
+</html>

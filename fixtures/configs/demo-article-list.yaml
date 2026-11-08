@@ -1,0 +1,22 @@
+site: demo-blog
+entry: https://fixtures.adaparse.local/blog
+target:
+  preset: article_list
+heal:
+  enabled: true
+  discovery: false
+  canary: balanced
+budgets:
+  max_pages: 5
+  max_depth: 1
+  concurrency: 1
+  request_timeout_ms: 5000
+  time_budget_ms: 10000
+output:
+  format: json
+  path: ./out/demo-article-list.json
+notify:
+  enabled: false
+fixtures:
+  https://fixtures.adaparse.local/blog: fixtures/html/articles_list.html
+state_dir: .adaparse/demo-blog

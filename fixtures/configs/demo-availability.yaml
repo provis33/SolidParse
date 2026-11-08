@@ -1,0 +1,20 @@
+site: demo-availability
+entry: https://fixtures.adaparse.local/product/alpine-backpack
+target:
+  preset: availability
+heal:
+  enabled: true
+  discovery: false
+  canary: balanced
+budgets:
+  max_pages: 3
+  max_depth: 1
+  concurrency: 1
+  request_timeout_ms: 5000
+  time_budget_ms: 8000
+output:
+  format: json
+  path: ./out/demo-availability.json
+fixtures:
+  https://fixtures.adaparse.local/product/alpine-backpack: fixtures/html/availability_page.html
+state_dir: .adaparse/demo-availability

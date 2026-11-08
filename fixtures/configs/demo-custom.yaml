@@ -1,0 +1,36 @@
+site: demo-custom
+entry: https://fixtures.adaparse.local/team
+target:
+  preset: custom
+  fields:
+    - name: title
+      required: true
+      normalize: string
+    - name: url
+      required: true
+      normalize: url
+    - name: role
+      required: true
+      normalize: enum
+      enumValues: [engineer, manager]
+    - name: active
+      required: false
+      normalize: boolean
+heal:
+  enabled: true
+  discovery: false
+  canary: permissive
+budgets:
+  max_pages: 5
+  max_depth: 1
+  concurrency: 1
+  request_timeout_ms: 5000
+  time_budget_ms: 10000
+output:
+  format: json
+  path: ./out/demo-custom.json
+notify:
+  enabled: true
+fixtures:
+  https://fixtures.adaparse.local/team: fixtures/html/custom_page.html
+state_dir: .adaparse/demo-custom

@@ -1,0 +1,8 @@
+site: eval-04
+entry: eval://page
+target:
+  preset: availability
+heal:
+  enabled: false
+pagination:
+  enabled: false
